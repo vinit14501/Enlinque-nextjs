@@ -39,19 +39,18 @@ const testimonials = [
 ];
 
 function getVisibleCount(): number {
-  if (typeof window !== "undefined") {
-    if (window.innerWidth < 768) return 1;
-    if (window.innerWidth < 1024) return 2;
-    return 3;
-  }
+  if (window.innerWidth < 768) return 1;
+  if (window.innerWidth < 1024) return 2;
   return 3;
 }
 
 export default function Testimonials() {
   const [startIndex, setStartIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(getVisibleCount);
+  const [visibleCount, setVisibleCount] = useState(3);
 
   useEffect(() => {
+    setVisibleCount(getVisibleCount());
+
     const handleResize = () => {
       setVisibleCount(getVisibleCount());
     };

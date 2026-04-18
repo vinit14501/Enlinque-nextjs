@@ -4,7 +4,7 @@
 
 @theme {
   /* ── Font Family ─────────────────────────────────── */
-  --font-sans: "Raleway", ui-sans-serif, system-ui;
+  --font-sans: var(--font-raleway), ui-sans-serif, system-ui;
 
   /* ── Colors ──────────────────────────────────────── */
   --color-navy-900: #0a1128;

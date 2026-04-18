@@ -77,8 +77,8 @@ export default function Hero() {
               alt={carouselContent[activeIndex].title}
               fill
               className="object-cover"
+              priority={activeIndex === 0}
               loading={activeIndex === 0 ? "eager" : "lazy"}
-              fetchPriority={activeIndex === 0 ? "high" : "auto"}
               sizes="100vw"
             />
           </motion.div>

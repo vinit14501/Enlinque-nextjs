@@ -9,6 +9,7 @@ const raleway = Raleway({
   subsets: ["latin"],
   weight: ["400", "600", "700", "800"],
   display: "swap",
+  variable: "--font-raleway",
 });
 
 export const metadata: Metadata = {
@@ -100,7 +101,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" dir="ltr">
-      <body className={`${raleway.className} antialiased`}>
+      <body className={`${raleway.variable} ${raleway.className} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
