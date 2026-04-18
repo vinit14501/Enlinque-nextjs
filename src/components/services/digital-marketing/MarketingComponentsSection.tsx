@@ -50,6 +50,7 @@ export default function MarketingComponentsSection() {
                       alt=""
                       width={16}
                       height={16}
+                      style={{ width: "auto", height: "auto" }}
                       className="transform transition-transform group-hover:translate-x-1"
                     />
                     <span>{item}</span>
