@@ -1,17 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 export default function Quotes() {
   return (
     <div className="flex items-center justify-center min-h-[40vh] sm:min-h-[45vh] md:min-h-[50vh] bg-[#000048] font-['lora']">
       <div className="w-full max-w-xl sm:max-w-2xl px-4 sm:px-6 py-8 sm:py-10 md:py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
+        <div className="animate-fade-in-up-slow">
           <div className="border-t border-white mb-3 sm:mb-4 transition-all duration-1000"></div>
           <div className="relative px-8 sm:px-10 md:px-12">
             <FaQuoteLeft className="absolute -left-2 sm:-left-4 md:-left-8 top-0 text-white text-xl sm:text-2xl md:text-3xl" />
@@ -24,7 +17,7 @@ export default function Quotes() {
             – Walt Disney
           </p>
           <div className="border-b border-gray-400 mt-3 sm:mt-4 transition-all duration-1000"></div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

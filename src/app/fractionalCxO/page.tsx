@@ -31,6 +31,29 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Fractional CxO Services",
+  provider: {
+    "@type": "Organization",
+    name: "Enlinque Consulting LLC",
+    url: "https://enlinque.com",
+  },
+  description:
+    "Access world-class executive leadership — CIO, CTO, CMO, CFO, COO — without the full-time commitment.",
+  url: "https://enlinque.com/fractionalCxO",
+  serviceType: "Fractional Executive Leadership",
+};
+
 export default function FractionalCxOPage() {
-  return <FractionalCxO />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <FractionalCxO />
+    </>
+  );
 }

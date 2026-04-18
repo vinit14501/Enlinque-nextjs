@@ -31,6 +31,29 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Digital Marketing",
+  provider: {
+    "@type": "Organization",
+    name: "Enlinque Consulting LLC",
+    url: "https://enlinque.com",
+  },
+  description:
+    "Expert digital marketing solutions — SEO, content marketing, social media, and performance analytics.",
+  url: "https://enlinque.com/digitalmarketing",
+  serviceType: "Digital Marketing",
+};
+
 export default function DigitalMarketingPage() {
-  return <DigitalMarketing />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <DigitalMarketing />
+    </>
+  );
 }

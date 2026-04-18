@@ -1,9 +1,7 @@
-﻿"use client";
-
-import Image from "next/image";
-import { motion } from "framer-motion";
+﻿import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import ContactCta from "@/components/common/ContactCta";
+import ScrollLink from "@/components/common/ScrollLink";
 
 const services = [
   {
@@ -79,31 +77,10 @@ const services = [
 ];
 
 export default function FractionalCxO() {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (!element) return;
-    const offset = 100;
-    const bodyRect = document.body.getBoundingClientRect().top;
-    const elementRect = element.getBoundingClientRect().top;
-    const elementPosition = elementRect - bodyRect;
-    const offsetPosition = elementPosition - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <div className="font-sans bg-white">
       {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] text-white overflow-hidden"
-      >
+      <div className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] text-white overflow-hidden animate-fade-in">
         <Image
           src="/images/fractional.webp"
           alt="Fractional CxO Services"
@@ -116,85 +93,69 @@ export default function FractionalCxO() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="h-full max-w-5xl mx-auto px-4 text-center relative z-10 flex items-center justify-center">
           <div>
-            <motion.h1
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 font-raleway tracking-tight"
-            >
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 font-raleway tracking-tight animate-fade-in-up">
               Fractional CxO Services
-            </motion.h1>
+            </h1>
             <p className="text-lg md:text-xl max-w-3xl mx-auto mb-6 md:mb-8 text-white font-light">
               Access world-class executive leadership without the full-time
               commitment. Our fractional CxOs bring decades of experience to
               elevate your business.
             </p>
             <p className="text-lg md:text-xl max-w-3xl mx-auto text-white font-bold tracking-widest">
-              <a
-                href="#cio"
-                onClick={(e) => handleScroll(e, "cio")}
+              <ScrollLink
+                targetId="cio"
                 className="hover:text-blue-300 transition-colors cursor-pointer"
               >
                 CIO
-              </a>{" "}
+              </ScrollLink>{" "}
               |{" "}
-              <a
-                href="#cto"
-                onClick={(e) => handleScroll(e, "cto")}
+              <ScrollLink
+                targetId="cto"
                 className="hover:text-blue-300 transition-colors cursor-pointer"
               >
                 CTO
-              </a>{" "}
+              </ScrollLink>{" "}
               |{" "}
-              <a
-                href="#cmo"
-                onClick={(e) => handleScroll(e, "cmo")}
+              <ScrollLink
+                targetId="cmo"
                 className="hover:text-blue-300 transition-colors cursor-pointer"
               >
                 CMO
-              </a>{" "}
+              </ScrollLink>{" "}
               |{" "}
-              <a
-                href="#cfo"
-                onClick={(e) => handleScroll(e, "cfo")}
+              <ScrollLink
+                targetId="cfo"
                 className="hover:text-blue-300 transition-colors cursor-pointer"
               >
                 CFO
-              </a>{" "}
+              </ScrollLink>{" "}
               |{" "}
-              <a
-                href="#coo"
-                onClick={(e) => handleScroll(e, "coo")}
+              <ScrollLink
+                targetId="coo"
                 className="hover:text-blue-300 transition-colors cursor-pointer"
               >
                 COO
-              </a>
+              </ScrollLink>
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* CxO Sections */}
       <div className="py-16 md:py-24 px-4">
         <div className="max-w-6xl mx-auto space-y-16 md:space-y-24">
           {services.map((service, index) => (
-            <motion.div
+            <div
               id={service.id}
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="grid md:grid-cols-2 gap-8 md:gap-12 items-stretch"
+              className="grid md:grid-cols-2 gap-8 md:gap-12 items-stretch animate-fade-in-up"
+              style={{ animationDelay: `${index * 200}ms` }}
             >
               {index % 2 === 0 ? (
                 <>
                   <div className="relative group flex flex-col justify-center">
                     <div className="absolute -left-2 md:-left-4 -bottom-2 md:-bottom-4 w-full h-full bg-linear-to-r from-blue-950 via-blue-800 to-blue-600 z-0"></div>
-                    <motion.div
-                      whileHover={{ scale: 1.03 }}
-                      className="relative z-10 grow overflow-hidden"
-                    >
+                    <div className="relative z-10 grow overflow-hidden transition-transform duration-300 hover:scale-[1.03]">
                       <div className="relative w-full h-62.5 md:h-87.5">
                         <Image
                           src={service.image}
@@ -206,7 +167,7 @@ export default function FractionalCxO() {
                           className="object-cover object-center"
                         />
                       </div>
-                    </motion.div>
+                    </div>
                   </div>
                   <div className="space-y-4 md:space-y-6 pl-0 md:pl-4 flex flex-col justify-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#0b60a0]">
@@ -251,10 +212,7 @@ export default function FractionalCxO() {
                   </div>
                   <div className="relative group flex flex-col justify-center">
                     <div className="absolute -right-2 md:-right-4 -bottom-2 md:-bottom-4 w-full h-full bg-linear-to-r from-blue-600 via-blue-800 to-blue-950 z-0"></div>
-                    <motion.div
-                      whileHover={{ scale: 1.03 }}
-                      className="relative z-10 grow overflow-hidden"
-                    >
+                    <div className="relative z-10 grow overflow-hidden transition-transform duration-300 hover:scale-[1.03]">
                       <div className="relative w-full h-62.5 md:h-87.5">
                         <Image
                           src={service.image}
@@ -264,11 +222,11 @@ export default function FractionalCxO() {
                           className="object-cover object-center"
                         />
                       </div>
-                    </motion.div>
+                    </div>
                   </div>
                 </>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

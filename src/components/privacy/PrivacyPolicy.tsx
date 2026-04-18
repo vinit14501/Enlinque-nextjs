@@ -1,19 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { privacyPolicyData } from "@/components/privacy/privacyPolicyData";
-
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 },
-};
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-16 md:px-24 lg:px-32 py-12 max-w-5xl">
-        <motion.div initial="initial" animate="animate" variants={fadeIn}>
+        <div className="animate-fade-in-up">
           <h1 className="text-4xl font-bold text-[#000048] mb-4">
             Privacy Policy
           </h1>
@@ -24,12 +15,10 @@ export default function PrivacyPolicy() {
 
           <div className="space-y-7">
             {privacyPolicyData.sections.map((section, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial="initial"
-                animate="animate"
-                variants={fadeIn}
-                transition={{ delay: index * 0.1 }}
+                className="animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <h2 className="text-2xl font-bold text-[#000048] mb-4">
                   {section.title}
@@ -88,10 +77,10 @@ export default function PrivacyPolicy() {
                     </a>
                   </div>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

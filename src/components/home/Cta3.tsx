@@ -1,14 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 import Button from "@/components/common/Button";
 
 export default function Cta3() {
-  const router = useRouter();
-
   return (
     <div className="relative w-full h-75 sm:h-87.5 md:h-100 overflow-hidden will-change-transform">
       <Image
@@ -34,12 +32,9 @@ export default function Cta3() {
             <p className="text-sm sm:text-base md:text-lg font-raleway mb-3 sm:mb-4 opacity-80">
               That Elevate Brands and Engage Audiences
             </p>
-            <Button
-              icon={BsArrowRight}
-              onClick={() => router.push("/websitedevelopment")}
-            >
-              Get Started
-            </Button>
+            <Link href="/websitedevelopment" className="inline-block">
+              <Button icon={BsArrowRight}>Get Started</Button>
+            </Link>
           </div>
         </div>
       </motion.div>

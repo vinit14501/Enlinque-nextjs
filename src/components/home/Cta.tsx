@@ -1,14 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 import Button from "@/components/common/Button";
 
 export default function Cta() {
-  const router = useRouter();
-
   return (
     <section className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative">
       <Image
@@ -29,13 +27,9 @@ export default function Cta() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white">
             Explore Our Fractional CxO Services
           </h2>
-          <Button
-            icon={BsArrowRight}
-            onClick={() => router.push("/fractionalCxO")}
-            className="mx-auto"
-          >
-            Get Started
-          </Button>
+          <Link href="/fractionalCxO" className="inline-block mx-auto">
+            <Button icon={BsArrowRight}>Get Started</Button>
+          </Link>
         </motion.div>
       </div>
     </section>

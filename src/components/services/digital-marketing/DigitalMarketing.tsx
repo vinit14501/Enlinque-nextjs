@@ -1,23 +1,14 @@
-"use client";
-
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import Button from "@/components/common/Button";
+import ScrollButton from "@/components/common/ScrollButton";
 import ContactCta from "@/components/common/ContactCta";
 import { digitalMarketingServices } from "@/components/services/digital-marketing/digitalMarketingServices";
 import SocialMediaSection from "@/components/services/digital-marketing/SocialMediaSection";
 import MarketingComponentsSection from "@/components/services/digital-marketing/MarketingComponentsSection";
 
 export default function DigitalMarketing() {
-  const router = useRouter();
-
-  const scrollToServices = () => {
-    const section = document.getElementById("services-section");
-    section?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -48,7 +39,9 @@ export default function DigitalMarketing() {
                   out in a competitive market.
                 </p>
               </div>
-              <Button onClick={scrollToServices}>Explore our Services</Button>
+              <ScrollButton targetId="services-section">
+                Explore our Services
+              </ScrollButton>
             </div>
           </div>
         </div>
@@ -75,28 +68,20 @@ export default function DigitalMarketing() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex justify-between items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="max-w-2xl"
-            >
+            <div className="max-w-2xl animate-fade-in-up">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white drop-shadow-md">
                 Webinars, Podcasts & Videos
               </h2>
               <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white/90">
                 Strategic Content Creation to maximize outreach
               </h2>
-            </motion.div>
+            </div>
 
-            <Button
-              variant="secondary"
-              icon={BsArrowRight}
-              onClick={() => router.push("/contact")}
-            >
-              Reach out to us
-            </Button>
+            <Link href="/contact" className="inline-block">
+              <Button variant="secondary" icon={BsArrowRight}>
+                Reach out to us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -154,13 +139,7 @@ export default function DigitalMarketing() {
           fill
           className="object-cover object-center"
         />
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="absolute bottom-0 left-0 right-0 flex justify-center"
-        >
+        <div className="absolute bottom-0 left-0 right-0 flex justify-center animate-fade-in-up">
           <div className="w-[80%] sm:w-[92%] md:w-[85%] bg-[#000048]/85 p-4 sm:p-6 md:p-8 shadow-lg">
             <div className="text-left text-white">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-raleway mb-2 sm:mb-3">
@@ -171,15 +150,12 @@ export default function DigitalMarketing() {
                 craft a tailored digital marketing strategy that drives results
                 and sets you up for success.
               </p>
-              <Button
-                icon={BsArrowRight}
-                onClick={() => router.push("/contact")}
-              >
-                Request a Quote
-              </Button>
+              <Link href="/contact" className="inline-block">
+                <Button icon={BsArrowRight}>Request a Quote</Button>
+              </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Marketing Components Section */}

@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
   FaCheckCircle,
   FaSync,
@@ -53,19 +50,17 @@ export default function ValuesSection() {
 
         <div className="w-full lg:w-1/2 grid grid-cols-2 gap-6">
           {valueDetails.map((value, index) => (
-            <motion.div
+            <div
               key={value.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-white p-6 rounded-xl shadow-md border border-green-100 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300"
+              className="bg-white p-6 rounded-xl shadow-md border border-green-100 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 animate-fade-in-up"
+              style={{ animationDelay: `${index * 200}ms` }}
             >
               <value.icon className="text-green-700 h-12 w-12 mb-4" />
               <h3 className="text-xl font-semibold text-green-800 mb-3">
                 {value.title}
               </h3>
               <p className="text-green-900 text-sm">{value.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

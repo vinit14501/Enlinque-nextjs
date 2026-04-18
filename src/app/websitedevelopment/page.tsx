@@ -31,6 +31,29 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Website Development",
+  provider: {
+    "@type": "Organization",
+    name: "Enlinque Consulting LLC",
+    url: "https://enlinque.com",
+  },
+  description:
+    "Custom website design and development services. Engaging digital experiences for businesses of all sizes.",
+  url: "https://enlinque.com/websitedevelopment",
+  serviceType: "Website Design and Development",
+};
+
 export default function WebsiteDevelopmentPage() {
-  return <WebsiteDevelopment />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <WebsiteDevelopment />
+    </>
+  );
 }

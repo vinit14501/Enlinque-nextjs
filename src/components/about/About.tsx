@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
   FaCheckCircle,
   FaSync,
@@ -41,11 +38,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <motion.section
-        className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] overflow-hidden"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
+      <section className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] overflow-hidden animate-fade-in">
         <div className="absolute inset-0">
           <Image
             src="/images/about.webp"
@@ -59,12 +52,7 @@ export default function About() {
         </div>
         <div className="relative h-full">
           <div className="h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center">
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-2xl w-full"
-            >
+            <div className="max-w-2xl w-full animate-fade-in-up">
               <h1 className="text-2xl md:text-4xl font-bold text-center text-white mb-4 md:mb-6">
                 About Us
               </h1>
@@ -75,20 +63,15 @@ export default function About() {
                 Innovative solutions for modern business challenges. We help
                 companies navigate digital transformation with confidence.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* About */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="grid md:grid-cols-2 items-stretch relative"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
+          <div className="grid md:grid-cols-2 items-stretch relative animate-fade-in animate-delay-300">
             <div className="absolute top-0 bottom-0 left-1/2 w-px bg-slate-200 hidden md:block" />
 
             <div className="p-8 md:p-12 lg:p-16 space-y-6">
@@ -126,18 +109,14 @@ export default function About() {
                 every step of the way.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Vision */}
       <section className="bg-white py-12 sm:py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
+          <div className="animate-fade-in animate-delay-400">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-[#000048]">
                 Our Vision
@@ -193,19 +172,14 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
       <section className="bg-[#0b60a0] py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-white"
-          >
+          <div className="text-white animate-fade-in animate-delay-500">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
               Why Choose Us?
             </h2>
@@ -216,7 +190,7 @@ export default function About() {
               agility needed to turn your vision into reality. Let us help you
               navigate the path to success with confidence and clarity.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -238,12 +212,10 @@ export default function About() {
             </div>
             <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {valueDetails.map((value, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300"
+                  className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <value.icon className="text-[#0b60a0] h-8 w-8 sm:h-12 sm:w-12 mb-4" />
                   <h3 className="text-lg sm:text-xl font-semibold text-[#000048] mb-3">
@@ -252,7 +224,7 @@ export default function About() {
                   <p className="text-sm sm:text-base text-black">
                     {value.description}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

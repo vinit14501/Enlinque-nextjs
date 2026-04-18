@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   FaServer,
   FaPaintBrush,
@@ -12,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import Button from "@/components/common/Button";
+import ScrollButton from "@/components/common/ScrollButton";
 import PricingSection from "@/components/services/website-development/PricingSection";
 import ContactCta from "@/components/common/ContactCta";
 
@@ -49,13 +47,6 @@ const services = [
 ];
 
 export default function WebsiteDevelopment() {
-  const router = useRouter();
-
-  const scrollToPricing = () => {
-    const pricingSection = document.getElementById("pricing-section");
-    pricingSection?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -86,7 +77,9 @@ export default function WebsiteDevelopment() {
                   both visually stunning and strategically effective.
                 </p>
               </div>
-              <Button onClick={scrollToPricing}>Check Pricing</Button>
+              <ScrollButton targetId="pricing-section">
+                Check Pricing
+              </ScrollButton>
             </div>
           </div>
         </div>
@@ -123,13 +116,7 @@ export default function WebsiteDevelopment() {
           fill
           className="object-cover object-center"
         />
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="absolute bottom-0 left-0 right-0 flex justify-center"
-        >
+        <div className="absolute bottom-0 left-0 right-0 flex justify-center animate-fade-in-up">
           <div className="w-[80%] sm:w-[92%] md:w-[85%] bg-[#000048]/85 p-4 sm:p-6 md:p-8 shadow-lg">
             <div className="text-left text-white">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-raleway mb-2 sm:mb-3">
@@ -140,15 +127,12 @@ export default function WebsiteDevelopment() {
                 marketing strategies to boost visibility, drive traffic, and
                 increase conversions.
               </p>
-              <Button
-                icon={BsArrowRight}
-                onClick={() => router.push("/digitalmarketing")}
-              >
-                Digital Marketing
-              </Button>
+              <Link href="/digitalmarketing" className="inline-block">
+                <Button icon={BsArrowRight}>Digital Marketing</Button>
+              </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Pricing Section */}

@@ -1,67 +1,29 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import Button from "@/components/common/Button";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut" as const,
-    },
-  },
-};
-
 export default function ContactCta() {
-  const router = useRouter();
-
   return (
-    <motion.section
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className="w-full py-8 sm:py-10 md:py-12 bg-[#0b60a0] relative"
-    >
+    <section className="w-full py-8 sm:py-10 md:py-12 bg-[#0b60a0] relative animate-fade-in-up">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.h2
-          variants={itemVariants}
-          className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold font-raleway text-white mb-3 sm:mb-4"
-        >
+        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold font-raleway text-white mb-3 sm:mb-4 animate-fade-in-up animate-stagger-1">
           Ready to Transform Your Ideas Into Reality?
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-sm sm:text-base md:text-lg text-white/90 font-raleway mb-4 sm:mb-5 max-w-2xl mx-auto"
-        >
+        <p className="text-sm sm:text-base md:text-lg text-white/90 font-raleway mb-4 sm:mb-5 max-w-2xl mx-auto animate-fade-in-up animate-stagger-2">
           Let&apos;s create something amazing together. Our team is just one
           click away from turning your vision into success.
-        </motion.p>
+        </p>
 
-        <Button
-          variant="secondary"
-          icon={BsArrowRight}
-          variants={itemVariants}
-          onClick={() => router.push("/contact")}
+        <Link
+          href="/contact"
+          className="inline-block animate-fade-in-up animate-stagger-3"
         >
-          Get in Touch
-        </Button>
+          <Button variant="secondary" icon={BsArrowRight}>
+            Get in Touch
+          </Button>
+        </Link>
       </div>
-    </motion.section>
+    </section>
   );
 }

@@ -10,12 +10,7 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ["mongoose"],
 
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "readymadeui.com",
-      },
-    ],
+    remotePatterns: [],
   },
 
   async headers() {
@@ -43,7 +38,7 @@ const nextConfig: NextConfig = {
               "default-src 'self'",
               `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
               "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' https://readymadeui.com data:",
+              "img-src 'self' data:",
               "font-src 'self'",
               "connect-src 'self'",
               "frame-ancestors 'none'",

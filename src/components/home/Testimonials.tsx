@@ -8,7 +8,7 @@ const testimonials = [
     id: 1,
     name: "John Doe",
     company: "Rubik",
-    image: "https://readymadeui.com/team-2.webp",
+    image: "/images/testimonials/team-2.webp",
     quote:
       "The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt.",
   },
@@ -16,7 +16,7 @@ const testimonials = [
     id: 2,
     name: "Mark Adair",
     company: "Alpha",
-    image: "https://readymadeui.com/team-5.webp",
+    image: "/images/testimonials/team-5.webp",
     quote:
       "The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt.",
   },
@@ -24,7 +24,7 @@ const testimonials = [
     id: 3,
     name: "Simon Konecki",
     company: "Labar",
-    image: "https://readymadeui.com/team-4.webp",
+    image: "/images/testimonials/team-4.webp",
     quote:
       "The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt.",
   },
@@ -32,7 +32,7 @@ const testimonials = [
     id: 4,
     name: "Emily Johnson",
     company: "TechCorp",
-    image: "https://readymadeui.com/team-1.webp",
+    image: "/images/testimonials/team-1.webp",
     quote:
       "Exceptional service that exceeded my expectations. The team was professional and the results were outstanding.",
   },
