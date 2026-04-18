@@ -1,0 +1,67 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+import { motion, type Variants } from "framer-motion";
+import { BsArrowRight } from "react-icons/bs";
+import Button from "@/components/common/Button";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
+export default function Cta2() {
+  const router = useRouter();
+
+  return (
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="w-full py-8 sm:py-10 md:py-12 bg-[#0b60a0] relative"
+    >
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.h2
+          variants={itemVariants}
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold font-raleway text-white mb-3 sm:mb-4"
+        >
+          Ready to Transform Your Ideas Into Reality?
+        </motion.h2>
+
+        <motion.p
+          variants={itemVariants}
+          className="text-sm sm:text-base md:text-lg text-white/90 font-raleway mb-4 sm:mb-5 max-w-2xl mx-auto"
+        >
+          Let&apos;s create something amazing together. Our team is just one
+          click away from turning your vision into success.
+        </motion.p>
+
+        <Button
+          variant="secondary"
+          icon={BsArrowRight}
+          variants={itemVariants}
+          onClick={() => router.push("/contact")}
+        >
+          Get in Touch
+        </Button>
+      </div>
+    </motion.section>
+  );
+}
