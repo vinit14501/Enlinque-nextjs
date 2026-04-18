@@ -1,6 +1,4 @@
-﻿"use client";
-
-import Image from "next/image";
+﻿import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 import ContactCta from "@/components/common/ContactCta";
