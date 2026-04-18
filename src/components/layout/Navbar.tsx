@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { Menu, X } from "lucide-react";
 import Button from "@/components/common/Button";
 
 const navItems = [
@@ -123,7 +123,7 @@ export default function Navbar() {
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none"
               aria-label="Toggle menu"
             >
-              <FaBars size={24} className="text-gray-800" />
+              <Menu size={24} className="text-gray-800" />
             </button>
           </div>
         </div>
@@ -155,7 +155,7 @@ export default function Navbar() {
                   className="p-2 rounded-lg hover:bg-gray-100 focus:outline-none"
                   aria-label="Close menu"
                 >
-                  <FaTimes size={24} className="text-gray-800" />
+                  <X size={24} className="text-gray-800" />
                 </button>
               </div>
 

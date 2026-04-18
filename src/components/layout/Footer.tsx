@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { FaLinkedin } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { Mail } from "lucide-react";
+import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import FooterServiceLink from "@/components/common/FooterServiceLink";
 
 const services = [
@@ -84,7 +84,7 @@ export default function Footer() {
               <h3 className="text-2xl font-bold tracking-wide">Contact</h3>
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3">
-                  <MdEmail className="text-white text-xl shrink-0" />
+                  <Mail className="text-white text-xl shrink-0" />
                   <a
                     href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@enlinque.com"}`}
                     className="text-white hover:text-blue-400 transition-colors duration-200 text-sm"
@@ -94,7 +94,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <FaLinkedin className="text-white text-xl shrink-0" />
+                  <LinkedinIcon className="text-white text-xl shrink-0" />
                   <a
                     href={
                       process.env.NEXT_PUBLIC_LINKEDIN_URL ||

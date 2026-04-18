@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
+import { ArrowRight } from "lucide-react";
 import Button from "@/components/common/Button";
 import ScrollButton from "@/components/common/ScrollButton";
 import ContactCta from "@/components/common/ContactCta";
@@ -78,7 +78,7 @@ export default function DigitalMarketing() {
             </div>
 
             <Link href="/contact" className="inline-block">
-              <Button variant="secondary" icon={BsArrowRight}>
+              <Button variant="secondary" icon={ArrowRight}>
                 Reach out to us
               </Button>
             </Link>
@@ -151,7 +151,7 @@ export default function DigitalMarketing() {
                 and sets you up for success.
               </p>
               <Link href="/contact" className="inline-block">
-                <Button icon={BsArrowRight}>Request a Quote</Button>
+                <Button icon={ArrowRight}>Request a Quote</Button>
               </Link>
             </div>
           </div>

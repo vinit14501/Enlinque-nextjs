@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaCheck, FaPlus } from "react-icons/fa";
+import { Check, Plus } from "lucide-react";
 import { pricingPlans } from "@/components/services/website-development/pricingPlans";
 import PlanModal from "@/components/common/PlanModal";
 import Button from "@/components/common/Button";
@@ -82,7 +82,10 @@ export default function PricingSection() {
                       key={feature}
                       className="flex items-center text-base group-hover:transform group-hover:translate-x-1 transition-transform duration-300"
                     >
-                      <FaCheck className="text-blue-600 mr-3 shrink-0" />
+                      <Check
+                        className="text-blue-600 mr-3 shrink-0"
+                        size={16}
+                      />
                       <span className="leading-relaxed">{feature}</span>
                     </li>
                   ))}
@@ -99,7 +102,7 @@ export default function PricingSection() {
                       key={service}
                       className="flex items-center text-base group-hover:transform group-hover:translate-x-1 transition-transform duration-300"
                     >
-                      <FaPlus className="text-blue-600 mr-3 shrink-0" />
+                      <Plus className="text-blue-600 mr-3 shrink-0" size={16} />
                       <span className="leading-relaxed">{service}</span>
                     </li>
                   ))}

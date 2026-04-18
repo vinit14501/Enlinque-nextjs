@@ -1,5 +1,5 @@
 ﻿import Image from "next/image";
-import { FaCheckCircle } from "react-icons/fa";
+import { CircleCheck } from "lucide-react";
 import ContactCta from "@/components/common/ContactCta";
 import ScrollLink from "@/components/common/ScrollLink";
 
@@ -182,7 +182,7 @@ export default function FractionalCxO() {
                           key={idx}
                           className="flex items-center text-sm md:text-base"
                         >
-                          <FaCheckCircle className="text-[#0b60a0] mr-3 shrink-0" />
+                          <CircleCheck className="text-[#0b60a0] mr-3 shrink-0" />
                           {point}
                         </li>
                       ))}
@@ -204,7 +204,7 @@ export default function FractionalCxO() {
                           key={idx}
                           className="flex items-center text-sm md:text-base"
                         >
-                          <FaCheckCircle className="text-[#0b60a0] mr-3 shrink-0" />
+                          <CircleCheck className="text-[#0b60a0] mr-3 shrink-0" />
                           {point}
                         </li>
                       ))}

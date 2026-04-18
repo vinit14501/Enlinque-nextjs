@@ -1,45 +1,45 @@
 import {
-  FaLaptopCode,
-  FaBullhorn,
-  FaCode,
-  FaShoppingCart,
-  FaDigitalTachograph,
-  FaTasks,
-} from "react-icons/fa";
+  Laptop,
+  Megaphone,
+  Code,
+  ShoppingCart,
+  Gauge,
+  ListChecks,
+} from "lucide-react";
 
 const services = [
   {
-    icon: FaLaptopCode,
+    icon: Laptop,
     title: "IT Consulting",
     description:
       "Optimize your technology strategy to align with business goals, ensuring faster time-to-market and scalable growth",
   },
   {
-    icon: FaBullhorn,
+    icon: Megaphone,
     title: "Digital Marketing",
     description:
       "Craft and execute data-driven marketing strategies that maximize ROI and drive customer acquisition for startups",
   },
   {
-    icon: FaCode,
+    icon: Code,
     title: "Software Development",
     description:
       "Deliver custom software solutions tailored to your business needs, from MVP to full-scale applications",
   },
   {
-    icon: FaShoppingCart,
+    icon: ShoppingCart,
     title: "E-commerce Solution",
     description:
       "Launch and grow your e-commerce business with end-to-end support, from platform selection to optimization",
   },
   {
-    icon: FaDigitalTachograph,
+    icon: Gauge,
     title: "Digital Transformation",
     description:
       "Modernize your business operations with innovative digital solutions that enhance efficiency and competitiveness",
   },
   {
-    icon: FaTasks,
+    icon: ListChecks,
     title: "Agile Implementation",
     description:
       "Adopt agile methodologies to streamline processes, improve collaboration, and accelerate project delivery",

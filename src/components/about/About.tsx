@@ -1,33 +1,28 @@
 import Image from "next/image";
-import {
-  FaCheckCircle,
-  FaSync,
-  FaLightbulb,
-  FaHandshake,
-} from "react-icons/fa";
+import { CircleCheck, RefreshCw, Lightbulb, Handshake } from "lucide-react";
 import ContactCta from "@/components/common/ContactCta";
 
 const valueDetails = [
   {
-    icon: FaCheckCircle,
+    icon: CircleCheck,
     title: "Reliability",
     description:
       "Consistent and dependable delivery of high-quality services with accuracy and timely completion.",
   },
   {
-    icon: FaSync,
+    icon: RefreshCw,
     title: "Flexibility",
     description:
       "Adapting seamlessly to changing business needs and market demands with scalable solutions.",
   },
   {
-    icon: FaLightbulb,
+    icon: Lightbulb,
     title: "Expertise",
     description:
       "Bringing specialized skills and industry knowledge to tackle complex tasks efficiently.",
   },
   {
-    icon: FaHandshake,
+    icon: Handshake,
     title: "Collaboration",
     description:
       "Promoting open communication, transparency, and teamwork for shared goals and success.",

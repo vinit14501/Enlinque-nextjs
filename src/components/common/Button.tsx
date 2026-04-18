@@ -1,4 +1,4 @@
-import type { IconType } from "react-icons";
+import type { LucideIcon } from "lucide-react";
 import type { ReactNode, ButtonHTMLAttributes } from "react";
 
 const VARIANTS = {
@@ -12,7 +12,7 @@ interface ButtonProps extends Omit<
 > {
   children: ReactNode;
   variant?: keyof typeof VARIANTS;
-  icon?: IconType;
+  icon?: LucideIcon;
   iconPosition?: "left" | "right";
   loading?: boolean;
   loadingText?: string;

@@ -2,18 +2,18 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin } from "react-icons/fa";
-import { GrSend } from "react-icons/gr";
-import toast from "react-hot-toast";
 import {
-  IoPersonOutline,
-  IoBusinessOutline,
-  IoMailOutline,
-  IoPhonePortraitOutline,
-  IoChatbubbleOutline,
-  IoCheckmarkCircleOutline,
-  IoRefreshOutline,
-} from "react-icons/io5";
+  Send,
+  User,
+  Building2,
+  Mail,
+  Smartphone,
+  MessageCircle,
+  CircleCheck,
+  RefreshCw,
+} from "lucide-react";
+import LinkedinIcon from "@/components/icons/LinkedinIcon";
+import toast from "react-hot-toast";
 import Button from "@/components/common/Button";
 import { submitContactForm } from "@/actions/contact";
 
@@ -40,7 +40,7 @@ function SuccessMessage({ onReset }: { onReset: () => void }) {
       animate={{ opacity: 1, y: 0 }}
       className="bg-white shadow-2xl rounded-lg p-8 flex flex-col items-center justify-center min-h-100 space-y-6"
     >
-      <IoCheckmarkCircleOutline className="text-6xl text-green-600" />
+      <CircleCheck className="text-green-600" size={60} />
       <h2 className="text-2xl font-bold text-[#000048] text-center">
         Thank you!
       </h2>
@@ -48,7 +48,7 @@ function SuccessMessage({ onReset }: { onReset: () => void }) {
         Your message has been successfully received. We will get back to you
         shortly.
       </p>
-      <Button icon={IoRefreshOutline} iconPosition="left" onClick={onReset}>
+      <Button icon={RefreshCw} iconPosition="left" onClick={onReset}>
         Send Another Message
       </Button>
     </motion.div>
@@ -138,25 +138,25 @@ export default function Contact() {
 
   const formFields = [
     {
-      icon: IoPersonOutline,
+      icon: User,
       name: "name",
       type: "text",
       placeholder: "Name *",
     },
     {
-      icon: IoBusinessOutline,
+      icon: Building2,
       name: "company",
       type: "text",
       placeholder: "Company Name *",
     },
     {
-      icon: IoMailOutline,
+      icon: Mail,
       name: "email",
       type: "email",
       placeholder: "Email *",
     },
     {
-      icon: IoPhonePortraitOutline,
+      icon: Smartphone,
       name: "phone",
       type: "tel",
       placeholder: "Phone Number *",
@@ -213,7 +213,10 @@ export default function Contact() {
                 href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@enlinque.com"}`}
                 className="flex items-center gap-2 text-white hover:text-blue-200 transition-colors duration-300 group"
               >
-                <IoMailOutline className="text-2xl transform group-hover:scale-110 transition-transform duration-300" />
+                <Mail
+                  className="transform group-hover:scale-110 transition-transform duration-300"
+                  size={24}
+                />
                 <span className="font-medium">Email</span>
               </a>
               <a
@@ -224,7 +227,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-white hover:text-blue-200 transition-colors duration-300 group"
               >
-                <FaLinkedin className="text-2xl transform group-hover:scale-110 transition-transform duration-300" />
+                <LinkedinIcon className="w-6 h-6 transform group-hover:scale-110 transition-transform duration-300" />
                 <span className="font-medium">LinkedIn</span>
               </a>
             </div>
@@ -284,7 +287,10 @@ export default function Contact() {
 
                   <div className="relative flex flex-col group">
                     <div className="flex items-start">
-                      <IoChatbubbleOutline className="absolute left-0 top-3 text-[#000048] text-xl group-focus-within:text-[#0b60a0] transition-colors duration-300" />
+                      <MessageCircle
+                        className="absolute left-0 top-3 text-[#000048] group-focus-within:text-[#0b60a0] transition-colors duration-300"
+                        size={20}
+                      />
                       <textarea
                         name="message"
                         value={formData.message}
@@ -307,7 +313,7 @@ export default function Contact() {
 
                   <Button
                     type="submit"
-                    icon={GrSend}
+                    icon={Send}
                     loading={isSubmitting}
                     loadingText="Sending..."
                     className="w-1/2 mx-auto"

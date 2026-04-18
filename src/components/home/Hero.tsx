@@ -3,10 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  RiCheckboxBlankCircleLine,
-  RiCheckboxBlankCircleFill,
-} from "react-icons/ri";
+import { Circle } from "lucide-react";
 
 const carouselContent = [
   {
@@ -160,7 +157,7 @@ export default function Hero() {
                 >
                   {activeIndex === index ? (
                     <div className="relative">
-                      <RiCheckboxBlankCircleFill className="text-[#0b60a0] w-3 h-3" />
+                      <Circle className="text-[#0b60a0] w-3 h-3 fill-[#0b60a0]" />
                       <motion.div
                         layoutId="activeIndicatorMobile"
                         className="absolute -inset-2 border border-[#0b60a0] rounded-full"
@@ -173,7 +170,7 @@ export default function Hero() {
                       />
                     </div>
                   ) : (
-                    <RiCheckboxBlankCircleLine
+                    <Circle
                       className={`w-3 h-3 text-white transition-all duration-300 ${
                         index === activeIndex
                           ? "opacity-100"

@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
-import { BsClipboardCheck } from "react-icons/bs";
-
+import { ChevronUp, ChevronDown, ClipboardCheck } from "lucide-react";
 const faqData = [
   {
     title: "What services does Enlinque offer?",
@@ -67,11 +65,7 @@ function FAQItem({
             isOpen ? "rotate-180" : "rotate-0"
           }`}
         >
-          {isOpen ? (
-            <MdKeyboardArrowUp size={24} />
-          ) : (
-            <MdKeyboardArrowDown size={24} />
-          )}
+          {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
         </div>
       </div>
       <div
@@ -98,7 +92,7 @@ export default function FaqPage() {
     <div className="pt-24 pb-12 bg-slate-50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center gap-2 mb-2">
-          <BsClipboardCheck className="w-6 h-6 text-blue-600" />
+          <ClipboardCheck className="w-6 h-6 text-blue-600" />
           <span className="text-base font-medium text-blue-600">
             Pre-Service Questions
           </span>

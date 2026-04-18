@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BsArrowRight } from "react-icons/bs";
+import { ArrowRight } from "lucide-react";
 import Button from "@/components/common/Button";
 
 export default function Cta3() {
@@ -33,7 +33,7 @@ export default function Cta3() {
               That Elevate Brands and Engage Audiences
             </p>
             <Link href="/websitedevelopment" className="inline-block">
-              <Button icon={BsArrowRight}>Get Started</Button>
+              <Button icon={ArrowRight}>Get Started</Button>
             </Link>
           </div>
         </div>

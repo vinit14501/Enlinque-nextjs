@@ -1,4 +1,4 @@
-import { FaCalendar } from "react-icons/fa";
+import { Calendar } from "lucide-react";
 import { termsData } from "@/components/terms/termsConditionData";
 
 export default function TermsConditions() {
@@ -11,11 +11,11 @@ export default function TermsConditions() {
           </h1>
           <div className="gap-4 text-[#0b60a0] text-lg font-normal">
             <div className="flex items-center gap-2 mb-2">
-              <FaCalendar className="text-[#0b60a0]" />
+              <Calendar className="text-[#0b60a0]" />
               <span>Effective Date: {termsData.metadata.effectiveDate}</span>
             </div>
             <div className="flex items-center gap-2 mb-4">
-              <FaCalendar className="text-[#0b60a0]" />
+              <Calendar className="text-[#0b60a0]" />
               <span>Last Updated: {termsData.metadata.lastUpdated}</span>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
+import { ArrowRight } from "lucide-react";
 import Button from "@/components/common/Button";
 
 export default function ContactCta() {
@@ -19,7 +19,7 @@ export default function ContactCta() {
           href="/contact"
           className="inline-block animate-fade-in-up animate-stagger-3"
         >
-          <Button variant="secondary" icon={BsArrowRight}>
+          <Button variant="secondary" icon={ArrowRight}>
             Get in Touch
           </Button>
         </Link>

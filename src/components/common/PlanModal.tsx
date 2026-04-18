@@ -2,20 +2,20 @@
 
 import { useEffect, useState, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { IoClose } from "react-icons/io5";
 import {
-  IoPersonOutline,
-  IoMailOutline,
-  IoPhonePortraitOutline,
-  IoCheckmarkCircleOutline,
-  IoRefreshOutline,
-  IoRocketOutline,
-} from "react-icons/io5";
-import { GrSend } from "react-icons/gr";
+  X,
+  User,
+  Mail,
+  Smartphone,
+  CircleCheck,
+  RefreshCw,
+  Rocket,
+  Send,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import toast from "react-hot-toast";
 import Button from "@/components/common/Button";
 import { submitPlanForm } from "@/actions/plan";
-import type { IconType } from "react-icons";
 
 interface SelectedPlan {
   name: string;
@@ -40,7 +40,7 @@ const SuccessMessage = memo(function SuccessMessage({
       animate={{ opacity: 1, y: 0 }}
       className="bg-white shadow-2xl rounded-lg p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center min-h-75 sm:min-h-87.5 w-full max-w-xl mx-auto space-y-4 sm:space-y-6"
     >
-      <IoCheckmarkCircleOutline className="text-4xl sm:text-5xl md:text-6xl text-green-600" />
+      <CircleCheck className="text-4xl sm:text-5xl md:text-6xl text-green-600" />
       <h2 className="text-xl sm:text-2xl font-bold text-[#000048] text-center">
         Thank you for subscribing!
       </h2>
@@ -48,7 +48,7 @@ const SuccessMessage = memo(function SuccessMessage({
         Your subscription request has been successfully received. We will get
         back to you shortly.
       </p>
-      <Button icon={IoRefreshOutline} iconPosition="left" onClick={onReset}>
+      <Button icon={RefreshCw} iconPosition="left" onClick={onReset}>
         Subscribe to Another Plan
       </Button>
     </motion.div>
@@ -56,7 +56,7 @@ const SuccessMessage = memo(function SuccessMessage({
 });
 
 interface FormField {
-  icon: IconType;
+  icon: LucideIcon;
   name: string;
   type: string;
   placeholder: string;
@@ -164,19 +164,19 @@ function PlanModal({ isOpen, onClose, selectedPlan }: PlanModalProps) {
 
   const formFields: FormField[] = [
     {
-      icon: IoPersonOutline,
+      icon: User,
       name: "name",
       type: "text",
       placeholder: "Name *",
     },
     {
-      icon: IoMailOutline,
+      icon: Mail,
       name: "email",
       type: "email",
       placeholder: "Email *",
     },
     {
-      icon: IoPhonePortraitOutline,
+      icon: Smartphone,
       name: "phone",
       type: "tel",
       placeholder: "Phone Number *",
@@ -209,7 +209,7 @@ function PlanModal({ isOpen, onClose, selectedPlan }: PlanModalProps) {
               className="fixed sm:absolute right-4 top-4 text-white z-20 transition-all disabled:opacity-50 bg-black/30 hover:bg-black/40 p-2.5 rounded-full"
               aria-label="Close modal"
             >
-              <IoClose className="w-5 h-5 sm:w-6 sm:h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 p-4 sm:p-6 lg:p-8 max-h-[90vh] lg:max-h-[85vh] overflow-y-auto">
@@ -249,7 +249,7 @@ function PlanModal({ isOpen, onClose, selectedPlan }: PlanModalProps) {
 
                       <Button
                         type="submit"
-                        icon={GrSend}
+                        icon={Send}
                         loading={isSubmitting}
                         loadingText="Processing..."
                         className="w-full sm:w-auto min-w-50 mx-auto"
@@ -265,7 +265,7 @@ function PlanModal({ isOpen, onClose, selectedPlan }: PlanModalProps) {
               <div className="w-full lg:w-5/12 space-y-4 sm:space-y-6 py-2 sm:py-4 px-2 sm:px-4 relative z-10">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <IoRocketOutline className="text-3xl sm:text-4xl text-white" />
+                    <Rocket className="text-3xl sm:text-4xl text-white" />
                     <h1 className="text-xl sm:text-2xl lg:text-3xl font-light text-white tracking-wide">
                       Ready to Launch?
                     </h1>

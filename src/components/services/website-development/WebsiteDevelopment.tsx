@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  FaServer,
-  FaPaintBrush,
-  FaGoogle,
-  FaAddressBook,
-  FaCloudUploadAlt,
-} from "react-icons/fa";
-import { BsArrowRight } from "react-icons/bs";
+  Server,
+  Paintbrush,
+  Search,
+  BookUser,
+  CloudUpload,
+  ArrowRight,
+} from "lucide-react";
 import Button from "@/components/common/Button";
 import ScrollButton from "@/components/common/ScrollButton";
 import PricingSection from "@/components/services/website-development/PricingSection";
@@ -15,31 +15,31 @@ import ContactCta from "@/components/common/ContactCta";
 
 const services = [
   {
-    icon: FaServer,
+    icon: Server,
     title: "Hosting Platform Selection",
     description:
       "Choosing a hosting platform that aligns with your website's performance, scalability, and budget requirements.",
   },
   {
-    icon: FaPaintBrush,
+    icon: Paintbrush,
     title: "Custom Web Design",
     description:
       "Crafting unique, visually stunning designs tailored to reflect your brand's identity and captivate your audience.",
   },
   {
-    icon: FaGoogle,
+    icon: Search,
     title: "Search Engine Optimization (SEO)",
     description:
       "Optimizing your website to rank higher on search engines and drive targeted traffic to your business.",
   },
   {
-    icon: FaAddressBook,
+    icon: BookUser,
     title: "CRM Integration",
     description:
       "Seamlessly connecting your website with CRM tools to streamline customer management and enhance business efficiency.",
   },
   {
-    icon: FaCloudUploadAlt,
+    icon: CloudUpload,
     title: "Ongoing Website Enhancement & Maintenance",
     description:
       "Ensuring your website stays updated, secure, and optimized for peak performance with regular enhancements and maintenance.",
@@ -128,7 +128,7 @@ export default function WebsiteDevelopment() {
                 increase conversions.
               </p>
               <Link href="/digitalmarketing" className="inline-block">
-                <Button icon={BsArrowRight}>Digital Marketing</Button>
+                <Button icon={ArrowRight}>Digital Marketing</Button>
               </Link>
             </div>
           </div>

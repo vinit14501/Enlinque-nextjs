@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BsArrowRight } from "react-icons/bs";
+import { ArrowRight } from "lucide-react";
 import Button from "@/components/common/Button";
 
 export default function Cta() {
@@ -28,7 +28,7 @@ export default function Cta() {
             Explore Our Fractional CxO Services
           </h2>
           <Link href="/fractionalCxO" className="inline-block mx-auto">
-            <Button icon={BsArrowRight}>Get Started</Button>
+            <Button icon={ArrowRight}>Get Started</Button>
           </Link>
         </motion.div>
       </div>

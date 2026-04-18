@@ -1,4 +1,4 @@
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { Quote } from "lucide-react";
 
 export default function Quotes() {
   return (
@@ -7,8 +7,8 @@ export default function Quotes() {
         <div className="animate-fade-in-up-slow">
           <div className="border-t border-white mb-3 sm:mb-4 transition-all duration-1000"></div>
           <div className="relative px-8 sm:px-10 md:px-12">
-            <FaQuoteLeft className="absolute -left-2 sm:-left-4 md:-left-8 top-0 text-white text-xl sm:text-2xl md:text-3xl" />
-            <FaQuoteRight className="absolute -right-2 sm:-right-4 md:-right-8 top-0 text-white text-xl sm:text-2xl md:text-3xl" />
+            <Quote className="absolute -left-2 sm:-left-4 md:-left-8 top-0 text-white text-xl sm:text-2xl md:text-3xl" />
+            <Quote className="absolute -right-2 sm:-right-4 md:-right-8 top-0 text-white text-xl sm:text-2xl md:text-3xl scale-x-[-1]x-[-1]" />
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center italic text-white mb-3 sm:mb-4">
               The way to get started is to quit talking and begin doing.
             </p>

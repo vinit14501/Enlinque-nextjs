@@ -1,22 +1,22 @@
 import {
-  FaChartLine,
-  FaSearchDollar,
-  FaHashtag,
-  FaBullhorn,
-  FaChartBar,
-  FaUserFriends,
-} from "react-icons/fa";
-import type { IconType } from "react-icons";
+  TrendingUp,
+  SearchCheck,
+  Hash,
+  Megaphone,
+  BarChart3,
+  Users,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export interface DigitalMarketingService {
-  icon: IconType;
+  icon: LucideIcon;
   title: string;
   points: string[];
 }
 
 export const digitalMarketingServices: DigitalMarketingService[] = [
   {
-    icon: FaChartLine,
+    icon: TrendingUp,
     title: "SEO Strategy",
     points: [
       "Keyword research & optimization",
@@ -29,7 +29,7 @@ export const digitalMarketingServices: DigitalMarketingService[] = [
     ],
   },
   {
-    icon: FaSearchDollar,
+    icon: SearchCheck,
     title: "PPC (Pay-Per-Click) Advertising",
     points: [
       "Keyword Targeting",
@@ -42,7 +42,7 @@ export const digitalMarketingServices: DigitalMarketingService[] = [
     ],
   },
   {
-    icon: FaHashtag,
+    icon: Hash,
     title: "Social Media Marketing",
     points: [
       "Social media strategy",
@@ -55,7 +55,7 @@ export const digitalMarketingServices: DigitalMarketingService[] = [
     ],
   },
   {
-    icon: FaBullhorn,
+    icon: Megaphone,
     title: "Content Marketing",
     points: [
       "Content strategy and planning",
@@ -68,7 +68,7 @@ export const digitalMarketingServices: DigitalMarketingService[] = [
     ],
   },
   {
-    icon: FaChartBar,
+    icon: BarChart3,
     title: "Ad Campaign Management",
     points: [
       "Campaign Strategy & Planning",
@@ -81,7 +81,7 @@ export const digitalMarketingServices: DigitalMarketingService[] = [
     ],
   },
   {
-    icon: FaUserFriends,
+    icon: Users,
     title: "Brand Strategy & Development",
     points: [
       "Brand identity and positioning",
