@@ -49,7 +49,7 @@ export default function Hero() {
     if (isAutoPlaying) {
       interval = setInterval(() => {
         setActiveIndex((prev) => (prev + 1) % carouselContent.length);
-      }, 5000);
+      }, 10000);
     }
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
@@ -63,13 +63,13 @@ export default function Hero() {
   return (
     <div className="relative w-full min-h-100 md:min-h-125 lg:h-screen lg:max-h-125 flex overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="sync">
           <motion.div
             key={carouselContent[activeIndex].image}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.1 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
             className="w-full h-full absolute inset-0"
           >
             <Image
